@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Injection CSS",
+  "name": "CustOmnivox - Dark mode",
   "version": "1.0",
-  "description": "Injecte du CSS personnalisé sur un site web.",
+  "description": "Enfin un vrai Dark mode pour Omnivox",
   "permissions": ["activeTab", "scripting"],
   "host_permissions": [
     "https://*/*",
