@@ -1,0 +1,821 @@
+:root {
+    --primary-background-color: #191A1C;
+    --secondary-background-color: #26282B;
+    --important-background-color: #483d66;
+    --primary-text-color: #e6ebf2;
+    --secondary-text-color: #a9b4c4;
+    --important-text-color: #CE6B39;
+    --text-muted: #6f7d91;
+}
+
+/* Styles pour https://climoilou.omnivox.ca/intr/ */
+.omnivox-intr-active {
+    /* ============= Accueil ============= */
+}
+.omnivox-intr-active body,
+.omnivox-intr-active body a,
+.omnivox-intr-active .ovx10_lienService,
+.omnivox-intr-active #headerNavbarProfileUserName {
+    color: var(--primary-text-color) !important;
+    font-weight: normal !important;
+    font-family: Roboto;
+}
+
+.omnivox-intr-active #headerFixedBar,
+.omnivox-intr-active #spRightSize,
+.omnivox-intr-active #spLeftSize,
+.omnivox-intr-active #QuoiDeNeufsWrapper {
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-intr-active #calendrierEvenement-filtres {
+    color: var(--primary-background-color) !important;
+}
+
+.omnivox-intr-active .headerLeaRetour:hover,
+.omnivox-intr-active .headerNavbarLink:hover,
+.omnivox-intr-active #headerOmnivoxLogol:hover,
+.omnivox-intr-active #wrapper-headerOmnivoxLogo:hover {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-intr-active .nb-nouveautes {
+    background-color: var(--important-background-color) !important;
+    color: var(--secondary-text-color);
+}
+
+.omnivox-intr-active .aNavigationTab,
+.omnivox-intr-active .ovx_sepClass {
+    color: var(--important-text-color) !important;
+}
+
+.omnivox-intr-active #headerImage {
+    background-image: url("https://i.imgur.com/NsuetyD.png") !important;
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-intr-active .carte-actualite .carte-portail-header,
+.omnivox-intr-active .UlMobileTitre {
+    display: none;
+}
+
+.omnivox-intr-active .carte-actualite {
+    height: 120px;
+}
+
+.omnivox-intr-active #ovx10_header_QDN {
+    visibility: hidden;
+    position: relative;
+}
+
+.omnivox-intr-active #ovx10_header_QDN::after {
+    content: "Travaux et documents";
+    visibility: visible;
+    color: var(--primary-text-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.omnivox-intr-active .carte-QDN {
+    border: 3px solid var(--important-text-color) !important;
+}
+
+.omnivox-intr-active .carte-QDN .carte-portail-header {
+    background: none !important;
+}
+
+.omnivox-intr-active .ovx10_headerPart,
+.omnivox-intr-active .ovx_sepClass {
+    border-bottom: solid 5px var(--secondary-background-color) !important;
+    border-radius: 5px !important;
+}
+
+.omnivox-intr-active .ovx10_offreServices {
+    background-color: var(--secondary-background-color);
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.omnivox-intr-active .ovx_sepClass {
+    margin-top: 10px !important;
+}
+
+.omnivox-intr-active .slider-portail-zone.slider-portail-zone-next.regular-content {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--primary-background-color));
+}
+
+.omnivox-intr-active .slider-portail-zone.slider-portail-zone-previous.regular-content {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), var(--primary-background-color));
+}
+
+.omnivox-intr-active .carte-portail,
+.omnivox-intr-active .card-with-icon {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-intr-active .carte-portail-titre,
+.omnivox-intr-active .carte-portail-header {
+    color: white !important;
+}
+
+.omnivox-intr-active .carte-portail-desc {
+    color: rgb(188, 188, 188) !important;
+}
+
+.omnivox-intr-active .carte-portail-header {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-intr-active .parent-image-btn-header img,
+.omnivox-intr-active .svg-icon svg {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(18%) saturate(873%) hue-rotate(222deg) brightness(94%) contrast(92%) !important;
+}
+
+.omnivox-intr-active a .svg-icon {
+    background-color: var(--secondary-background-color) !important;
+}
+
+/* Styles pour https://climoilou.omnivox.ca/Login/Account/ */
+.omnivox-login-active {
+    /* ======================== LOGIN PAGE ======================== */
+}
+.omnivox-login-active body {
+    background-image: none !important;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100% !important;
+    width: 100%;
+}
+
+.omnivox-login-active .container-roles {
+    border: 2px solid var(--important-background-color) !important;
+}
+
+.omnivox-login-active .recaptcha-trigger:disabled {
+    color: var(--important-text-color) !important;
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-login-active .title,
+.omnivox-login-active .subtitle a {
+    color: var(--primary-text-color) !important;
+}
+
+.omnivox-login-active .carousel-identification-sso {
+    display: none;
+}
+
+.omnivox-login-active body,
+.omnivox-login-active .identification-intraflex {
+    background-color: var(--primary-background-color) !important;
+    max-height: 400% !important;
+}
+
+.omnivox-login-active .service {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-login-active #section-form {
+    color: var(--important-background-color) !important;
+}
+
+.omnivox-login-active .section-login {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-login-active html body button {
+    color: var(--important-text-color) !important;
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-login-active .footer-identification-intraflex {
+    margin-bottom: 0px !important;
+}
+
+.omnivox-login-active .container-message-logout {
+    display: none !important;
+}
+
+.omnivox-login-active .msg-erreur .card-panel {
+    background-color: var(--primary-background-color) !important;
+    border: 3px solid var(--important-background-color);
+}
+
+.omnivox-login-active .msg-erreur .card-panel .red-text {
+    color: var(--important-text-color);
+}
+
+.omnivox-login-active #role-2 {
+    background-color: var(--primary-background-color);
+    border-right: 1px solid var(--important-background-color);
+    color: var(--important-text-color);
+}
+
+.omnivox-login-active #role-3 {
+    background-color: var(--primary-background-color);
+    border-left: 1px solid var(--important-background-color);
+    color: var(--important-text-color);
+}
+
+.omnivox-login-active .selected {
+    background-color: var(--important-text-color) !important;
+    color: var(--important-background-color) !important;
+    font-weight: 300 !important;
+}
+
+.omnivox-login-active .div-identifiant *,
+.omnivox-login-active .div-password * {
+    color: var(--primary-text-color) !important;
+}
+
+/* Styles pour https://climoilou-lea.omnivox.ca/ */
+.omnivox-lea-active {
+    /* ============= Lea ============= */
+}
+.omnivox-lea-active body,
+.omnivox-lea-active #headerFixedBar {
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-lea-active body * {
+    background-image: none !important;
+}
+
+.omnivox-lea-active body {
+    height: 100px !important;
+}
+
+.omnivox-lea-active br {
+    display: none;
+}
+
+.omnivox-lea-active .parent-image-btn-header img,
+.omnivox-lea-active .svg-icon svg {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(18%) saturate(873%) hue-rotate(222deg) brightness(94%) contrast(92%) !important;
+}
+
+.omnivox-lea-active a .svg-icon {
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-lea-active .headerLeaRetour:hover,
+.omnivox-lea-active .headerNavbarLink:hover,
+.omnivox-lea-active #headerOmnivoxLogo,
+.omnivox-lea-active .card-panel-content {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-lea-active .card-panel {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-lea-active html body .contenuMenuGroupeLEASelectV3estdMenuV2,
+.omnivox-lea-active html body.contenuMenuGroupeSelectAutreCGV3estd,
+.omnivox-lea-active .coursInactif-N {
+    background-color: var(--secondary-background-color) !important;
+    color: var(--important-text-color) !important;
+    border: 2px solid var(--secondary-background-color) !important;
+    border-radius: 5px !important;
+}
+
+.omnivox-lea-active body,
+.omnivox-lea-active body a,
+.omnivox-lea-active .infoCGNoCours,
+.omnivox-lea-active .titre-menu-middle,
+.omnivox-lea-active .infoCGNomCours,
+.omnivox-lea-active .infoCGNoGroupe {
+    color: var(--primary-text-color) !important;
+}
+
+.omnivox-lea-active .td-liens,
+.omnivox-lea-active .tdMenuMesClassesAENS_DISPO,
+.omnivox-lea-active .tdMenuNonAccessibleMesClasses,
+.omnivox-lea-active #tdMenuMesClassesPERE,
+.omnivox-lea-active .section-droite,
+.omnivox-lea-active #headerImage,
+.omnivox-lea-active h1.classes-titre {
+    display: none;
+}
+
+.omnivox-lea-active .trBandeau {
+    height: 78px;
+}
+
+.omnivox-lea-active .td-menu {
+    border-right: 3px solid var(--important-text-color);
+    margin-right: 30px !important;
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-lea-active .cvirContenuCVIR *,
+.omnivox-lea-active .TitreCategorie div * {
+    color: var(--primary-text-color) !important;
+}
+
+.omnivox-lea-active #colonneEtoileVisualisation img.classeEtoileNouvDoc {
+    display: none !important;
+}
+
+.omnivox-lea-active #colonneEtoileVisualisation::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>\
+<path d='M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z'/>\
+</svg>") no-repeat center;
+}
+
+.omnivox-lea-active .LigneListTrav1 .lienTruncate img,
+.omnivox-lea-active .LigneListTrav2 .lienTruncate img {
+    display: none;
+}
+
+.omnivox-lea-active .LigneListTrav1 .lienTruncate:has(img)::before,
+.omnivox-lea-active .LigneListTrav2 .lienTruncate:has(img)::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml;utf8,\
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>\
+            <path d='M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0'/>\
+            <path d='M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z'/>\</svg>") no-repeat center;
+    mask: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>\
+<path d='M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0'/>\
+<path d='M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z'/>\
+</svg>") no-repeat center;
+}
+
+.omnivox-lea-active .EnteteListTabTravauxEtu {
+    background-image: none;
+    border-bottom: 2px solid var(--important-text-color);
+}
+
+.omnivox-lea-active .EnteteListTabTravauxEtu * {
+    color: white !important;
+}
+
+.omnivox-lea-active #tabListeTravEtu * {
+    color: var(--primary-text-color) !important;
+    font-style: normal;
+}
+
+.omnivox-lea-active .LigneListTrav1,
+.omnivox-lea-active .LigneListTrav2,
+.omnivox-lea-active .LigneListTrav1Last,
+.omnivox-lea-active .LigneListTrav2Last {
+    background-color: var(--primary-background-color);
+}
+
+.omnivox-lea-active #tabListeTravEtu {
+    background-color: var(--secondary-background-color) !important;
+    border: 2px solid var(--important-text-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.omnivox-lea-active table[width="300"] tbody tr:nth-last-child(-n + 5) {
+    display: none !important;
+}
+
+.omnivox-lea-active #region-raccourcis-services-skytech {
+    margin-top: 144px;
+    text-align: center;
+    width: 80% !important;
+    border-bottom: 3px solid var(--important-text-color);
+    padding-left: 0px;
+    align-content: center !important;
+}
+
+.omnivox-lea-active .width-menu {
+    padding-top: 25px !important;
+}
+
+.omnivox-lea-active .width-menu:has(.cgTitleMesServices) {
+    width: 50%;
+    border-bottom: 2px solid var(--important-text-color) !important;
+}
+
+.omnivox-lea-active .CVIR_tdLegendeTitre,
+.omnivox-lea-active .CVIR_tdLegendeTitre img,
+.omnivox-lea-active .CVIR_tdLegendeTexte,
+.omnivox-lea-active #tblExplicationsEtudiant,
+.omnivox-lea-active #titrelblConseilSauvegarde,
+.omnivox-lea-active #titrelblConseilZipEstd,
+.omnivox-lea-active .parent-menu-gauche img {
+    display: none;
+}
+
+.omnivox-lea-active .classes-wrapper.materialize-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+    width: 100% !important;
+    max-width: 1000px !important;
+}
+
+.omnivox-lea-active .parent-menu-gauche * {
+    background-color: var(--secondary-background-color) !important;
+    background-image: none;
+}
+
+.omnivox-lea-active #tblDocuments,
+.omnivox-lea-active #tblDocuments table,
+.omnivox-lea-active #tblDocuments tbody,
+.omnivox-lea-active #tblDocuments tr,
+.omnivox-lea-active #tblDocuments td {
+    background-color: var(--primary-background-color) !important;
+    color: var(--primary-text-color) !important;
+    border-collapse: collapse !important;
+}
+
+.omnivox-lea-active #tblDocuments th,
+.omnivox-lea-active .HeaderTblDoc,
+.omnivox-lea-active .DisDoc_TitreCategorie {
+    background-color: var(--secondary-background-color) !important;
+    color: var(--primary-text-color) !important;
+    padding: 8px !important;
+}
+
+.omnivox-lea-active td.colDistribue,
+.omnivox-lea-active td.colVoirTelecharger,
+.omnivox-lea-active td.colModifierSupprimer,
+.omnivox-lea-active span.DocDispo {
+    color: var(--secondary-text-color) !important;
+}
+
+.omnivox-lea-active a.lblTitreDocumentDansListe:hover,
+.omnivox-lea-active .divDescriptionDocumentDansListe a:hover {
+    color: var(--text-muted) !important;
+    text-decoration: underline !important;
+}
+
+.omnivox-lea-active .item-header-title {
+    color: white !important;
+}
+
+.omnivox-lea-active .cvirLienCoursShadow,
+.omnivox-lea-active .tblMenuStyleXPDeuxNiveaux {
+    background-color: var(--secondary-background-color) !important;
+}
+
+/* Styles pour https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx */
+.omnivox-depot-active {
+    /* ============ Dépot travail ============ */
+}
+.omnivox-depot-active .collection .collection-item {
+    background-color: var(--secondary-background-color);
+    border-radius: 10px;
+    margin: 10px;
+    border-bottom: none;
+    border: 15px solid var(--secondary-background-color);
+}
+
+.omnivox-depot-active .blue.lighten-3 {
+    background-color: var(--important-background-color) !important;
+    border-radius: 10px;
+}
+
+.omnivox-depot-active .TitrePageLigne1,
+.omnivox-depot-active .TitrePageLigne2 {
+    color: var(--primary-text-color);
+}
+
+/* Styles pour https://climoilou.omnivox.ca/apps/mfa/login */
+.omnivox-mfa-active {
+    /* ============= 2FA ============= */
+}
+.omnivox-mfa-active body {
+    background-image: none !important;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100% !important;
+    width: 100%;
+}
+
+.omnivox-mfa-active .container-roles {
+    border: 2px solid var(--important-background-color) !important;
+}
+
+.omnivox-mfa-active body,
+.omnivox-mfa-active .identification-intraflex {
+    background-color: var(--primary-background-color) !important;
+    max-height: 400% !important;
+}
+
+.omnivox-mfa-active .css-o6nrg,
+.omnivox-mfa-active .css-1klvjok,
+.omnivox-mfa-active .css-lqosa6 {
+    color: var(--important-text-color);
+}
+
+.omnivox-mfa-active .MuiAppBar-colorPrimary {
+    background-color: var(--secondary-background-color);
+    border-radius: 5px;
+    top: 25px;
+    border: 3px solid var(--important-text-color);
+}
+
+.omnivox-mfa-active .MuiPaper-rounded {
+    background-color: var(--secondary-background-color);
+    color: var(--primary-text-color);
+    border: 3px solid var(--important-text-color);
+}
+
+.omnivox-mfa-active .MuiPaper-rounded a {
+    color: var(--important-text-color);
+}
+
+.omnivox-mfa-active .MuiOutlinedInput-root {
+    background-color: var(--primary-text-color);
+    border: 3px solid var(--important-text-color);
+}
+
+.omnivox-mfa-active .css-qpaout {
+    border: 3px solid var(--important-text-color);
+    color: var(--primary-text-color) !important;
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-mfa-active .css-134gm5v {
+    text-decoration: underline var(--important-text-color) !important;
+}
+
+.omnivox-mfa-active .css-yaj4yk {
+    color: var(--important-text-color);
+    background-color: var(--primary-text-color);
+    border-radius: 5px;
+    padding: 2px;
+    border: 2px solid var(--important-text-color) !important;
+}
+
+.omnivox-mfa-active .css-x305ps.Mui-checked {
+    color: var(--important-text-color);
+}
+
+.omnivox-mfa-active .MuiFab-circular {
+    background-color: var(--important-background-color);
+    color: var(--important-text-color);
+}
+
+/* Styles pour https://climoilou-estd.omnivox.ca/ */
+.omnivox-estd-active {
+    /* pas trop sur ca sert a quoi */
+}
+.omnivox-estd-active body {
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-estd-active body,
+.omnivox-estd-active body a {
+    color: white !important;
+}
+
+.omnivox-estd-active .ovx10_lienService,
+.omnivox-estd-active #headerNavbarProfileUserName {
+    color: var(--primary-text-color) !important;
+    font-weight: normal !important;
+}
+
+.omnivox-estd-active .headerLeaRetour:hover,
+.omnivox-estd-active .headerNavbarLink:hover,
+.omnivox-estd-active #headerOmnivoxLogo:hover,
+.omnivox-estd-active #wrapper-headerOmnivoxLogo:hover {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-estd-active #headerFixedBar,
+.omnivox-estd-active .page-body {
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-estd-active .card-panel,
+.omnivox-estd-active form tbody *,
+.omnivox-estd-active center table tbody * {
+    background-color: var(--secondary-background-color) !important;
+    color: white !important;
+}
+
+.omnivox-estd-active .card-infos *:not(.material-icons) {
+    color: white !important;
+}
+
+.omnivox-estd-active .card-infos .material-icons {
+    color: var(--primary-background-color) !important;
+}
+
+.omnivox-estd-active .btn {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-estd-active #grille-cheminement * {
+    background-color: var(--secondary-background-color) !important;
+    color: white !important;
+}
+
+/* Styles pour https://climoilou.omnivox.ca/WebApplication/Module.MIOE/ */
+.omnivox-mio-active {
+    /* ============ MIO ============ */
+}
+.omnivox-mio-active html body,
+.omnivox-mio-active #container {
+    background-color: var(--primary-background-color) !important;
+    background-image: none;
+}
+
+.omnivox-mio-active #ctl00_bodyPage #container {
+    top: 60px;
+}
+
+.omnivox-mio-active #container:has(#mnuPrWr) {
+    top: 0px;
+}
+
+.omnivox-mio-active #ctl00_cntFormulaire_upnListe {
+    background-color: var(--secondary-background-color) !important;
+    color: var(--primary-text-color) !important;
+}
+
+.omnivox-mio-active #ctl00_cntFormulaire_upnListe span,
+.omnivox-mio-active #ctl00_cntFormulaire_upnListe em,
+.omnivox-mio-active .lsTdTitle,
+.omnivox-mio-active .cSujet,
+.omnivox-mio-active .dest_professeur,
+.omnivox-mio-active .lstDestH .tblDest .nd,
+.omnivox-mio-active .leftHeader,
+.omnivox-mio-active .cDate,
+.omnivox-mio-active #menuBarreOutilsOptionsWrapper a {
+    color: var(--primary-text-color) !important;
+}
+
+.omnivox-mio-active .newmsg {
+    background-color: var(--important-text-color) !important;
+}
+
+.omnivox-mio-active :root {
+    --svgcolor: var(--important-text-color);
+}
+
+.omnivox-mio-active .highlight {
+    background-color: var(--important-background-color) !important;
+    background-image: none;
+}
+
+.omnivox-mio-active #menuBarreOutilsOptionsWrapper {
+    background-color: var(--secondary-background-color);
+    border-radius: 3px;
+}
+
+.omnivox-mio-active .divRechercheMio {
+    padding: 0px;
+    margin-left: 5px;
+}
+
+.omnivox-mio-active #tdLeftMenu {
+    background-image: none;
+}
+
+.omnivox-mio-active #menuBarreOutils {
+    border: none;
+    padding-right: 0px;
+    padding-left: 0px !important;
+}
+
+.omnivox-mio-active #tdLogo img,
+.omnivox-mio-active #tdRepeatSky,
+.omnivox-mio-active #fakeGrip {
+    display: none;
+}
+
+.omnivox-mio-active #header {
+    margin-top: 30px !important;
+}
+
+.omnivox-mio-active #AucunMsgLstWrapper {
+    margin-top: 30px !important;
+    display: none;
+}
+
+.omnivox-mio-active #footer .MenuPrincipalBoxSpace {
+    background-image: none;
+    background-color: var(--secondary-background-color);
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.omnivox-mio-active #contenuWrapper {
+    background-color: var(--primary-background-color);
+    padding: 15px;
+    border-radius: 3px !important;
+}
+
+.omnivox-mio-active .Msg .cBody {
+    background-color: var(--secondary-background-color) !important;
+    padding: 0px;
+    color: var(--primary-text-color);
+}
+
+.omnivox-mio-active .Msg tbody {
+    background-color: var(--secondary-background-color) !important;
+    padding: 10px;
+    border-radius: 3px !important;
+    margin: 0px !important;
+}
+
+.omnivox-mio-active #container {
+    padding-left: 0px;
+}
+
+.omnivox-mio-active .usageGreen {
+    background-color: var(--important-text-color);
+}
+
+.omnivox-mio-active .usageBG {
+    border: none;
+    background-color: var(--primary-background-color);
+}
+
+.omnivox-mio-active #mnuPrWr {
+    background: none;
+    border: none;
+    background-color: var(--secondary-background-color);
+    border-radius: 3px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+}
+
+.omnivox-mio-active #ctl00_bodyPage {
+    background-image: none;
+}
+
+.omnivox-mio-active #frGauche {
+    display: none !important;
+}
+
+.omnivox-mio-active #menuCommQuitter {
+    background: none;
+    border-right: none;
+}
+
+.omnivox-mio-active #ctl00_cntFormulaire_upnListe .Legende {
+    margin-bottom: 0px;
+}
+
+.omnivox-mio-active #ctl00_cntFormulaire_hlkThemes {
+    text-shadow: none;
+    color: var(--important-text-color);
+    padding-right: 20px;
+}
+
+.omnivox-mio-active #tdRepeatMenu,
+.omnivox-mio-active .tblTrierFiltrer {
+    background-image: none;
+}
+
+.omnivox-mio-active .tblTrierFiltrer {
+    background-color: var(--secondary-background-color) !important;
+    color: var(--primary-text-color);
+    height: 0px;
+}
+
+.omnivox-mio-active .norm td,
+.omnivox-mio-active tr.toprow td {
+    border-bottom: 2px solid black !important;
+}
+
+.omnivox-mio-active nav,
+.omnivox-mio-active #wrapper-headerOmnivoxLogo {
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-mio-active #txtRechercheMIO {
+    font-style: normal !important;
+    color: var(--primary-background-color);
+    border: none;
+    background-color: var(--primary-text-color);
+}
+
+.omnivox-mio-active .divBoutonsRechercheMIO {
+    border: none;
+    background-color: var(--primary-text-color);
+}
+
+.omnivox-mio-active #tdRepeatSky {
+    background-image: none;
+}
