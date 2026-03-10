@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "CustOmnivox - Dark mode",
-  "version": "1.1",
-  "description": "Theme sombre pour Omnivox",
+  "version": "1.2",
+  "description": "Theme sombre personnalisable pour Omnivox",
   "permissions": [
     "storage"
   ],

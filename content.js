@@ -2,16 +2,28 @@
 (function() {
     'use strict';
 
-    let isEnabled = true; // Par défaut activé
+    let isEnabled = true;
+    let themeColors = null;
 
-    // Fonction pour charger l'état depuis storage
+    // Charger l'état et les couleurs depuis storage
     function loadThemeState() {
-        chrome.storage.sync.get(['themeEnabled'], function(result) {
-            // Si la valeur n'existe pas, elle sera undefined, donc on garde true par défaut
+        chrome.storage.sync.get(['themeEnabled', 'themeColors'], function(result) {
             isEnabled = result.themeEnabled !== false;
+            themeColors = result.themeColors || null;
             applyThemeState();
             console.log(`%c🔧 Theme ${isEnabled ? 'activé' : 'désactivé'} (état chargé)`, 'background: #CE6B39; color: #191A1C; padding: 2px 4px; border-radius: 3px;');
         });
+    }
+
+    // Appliquer les couleurs personnalisées via CSS variables
+    function applyCustomColors() {
+        if (themeColors) {
+            const root = document.documentElement;
+            Object.entries(themeColors).forEach(([key, value]) => {
+                root.style.setProperty(`--${key}`, value);
+            });
+            console.log('%c🎨 Couleurs personnalisées appliquées', 'background: #CE6B39; color: #191A1C; padding: 2px 4px; border-radius: 3px;');
+        }
     }
 
     // Fonction pour appliquer l'état du theme
@@ -20,7 +32,7 @@
 
         if (isEnabled) {
             htmlElement.classList.add('omnivox-theme-active');
-            // Appliquer les styles spécifiques à l'URL
+            applyCustomColors();
             applyStylesBasedOnUrl();
         } else {
             htmlElement.classList.remove('omnivox-theme-active');
@@ -37,12 +49,11 @@
 
     // Fonction pour ajouter une classe à l'élément HTML en fonction de l'URL
     function applyStylesBasedOnUrl() {
-        if (!isEnabled) return; // Ne pas appliquer si désactivé
+        if (!isEnabled) return;
 
         const url = window.location.href;
         const htmlElement = document.documentElement;
 
-        // Retirer toutes les classes de style spécifiques existantes
         const classesToRemove = [];
         htmlElement.classList.forEach(className => {
             if (className.startsWith('omnivox-') && className !== 'omnivox-theme-active') {
@@ -51,7 +62,6 @@
         });
         classesToRemove.forEach(className => htmlElement.classList.remove(className));
 
-        // Mapping des URLs aux classes
         const urlMappings = [
             { prefix: 'https://climoilou.omnivox.ca/intr/', className: 'omnivox-intr-active', log: '🎨 Styles appliqués : Accueil (intr)' },
             { prefix: 'https://climoilou.omnivox.ca/Login/Account/', className: 'omnivox-login-active', log: '🔑 Styles appliqués : Page de login' },
@@ -63,7 +73,6 @@
             { prefix: 'https://climoilou.omnivox.ca/cvir/note', className: 'omnivox-note-active', log: '✉️ Styles appliqués : Notes' }
         ];
 
-        // Trouver et appliquer la première classe correspondante
         let applied = false;
         for (const mapping of urlMappings) {
             if (url.startsWith(mapping.prefix)) {
@@ -86,13 +95,19 @@
             applyThemeState();
             console.log(`%c🔧 Theme ${isEnabled ? 'activé' : 'désactivé'} (changement manuel)`, 'background: #CE6B39; color: #191A1C; padding: 2px 4px; border-radius: 3px;');
             sendResponse({success: true});
+        } else if (request.action === 'updateColors') {
+            themeColors = request.colors;
+            if (isEnabled) {
+                applyCustomColors();
+            }
+            sendResponse({success: true});
         }
     });
 
-    // Appliquer au chargement initial (immédiat car run_at: document_start)
+    // Appliquer au chargement initial
     loadThemeState();
 
-    // Observer les changements d'URL pour les SPA (Single Page Applications)
+    // Observer les changements d'URL
     let lastUrl = location.href;
     new MutationObserver(() => {
         const url = location.href;
@@ -104,7 +119,7 @@
         }
     }).observe(document, { subtree: true, childList: true });
 
-    // Appliquer également aux iframes
+    // Gestion des iframes (similaire à avant, mais avec les couleurs)
     function initIframes() {
         if (!isEnabled) return;
 
@@ -131,8 +146,14 @@
         const url = iframeDoc.location.href;
         const htmlElement = iframeDoc.documentElement;
 
-        // S'assurer que la classe theme-active est présente
         htmlElement.classList.add('omnivox-theme-active');
+
+        // Appliquer les couleurs à l'iframe
+        if (themeColors) {
+            Object.entries(themeColors).forEach(([key, value]) => {
+                htmlElement.style.setProperty(`--${key}`, value);
+            });
+        }
 
         const urlMappings = [
             { prefix: 'https://climoilou.omnivox.ca/intr/', className: 'omnivox-intr-active' },
@@ -156,7 +177,6 @@
         for (const mapping of urlMappings) {
             if (url.startsWith(mapping.prefix)) {
                 htmlElement.classList.add(mapping.className);
-                console.log(`%c🖼️ [iframe] Style appliqué: ${mapping.className}`, 'background: #483d66; color: #e6ebf2; padding: 2px 4px; border-radius: 3px;');
                 break;
             }
         }
@@ -194,7 +214,6 @@
         });
     }
 
-    // Initialiser les iframes existantes
     if (document.readyState === 'complete') {
         initIframes();
     } else {
