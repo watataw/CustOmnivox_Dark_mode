@@ -59,7 +59,8 @@
             { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx', className: 'omnivox-depot-active', log: '📤 Styles appliqués : Dépôt de travail' },
             { prefix: 'https://climoilou.omnivox.ca/apps/mfa/login', className: 'omnivox-mfa-active', log: '🔐 Styles appliqués : 2FA' },
             { prefix: 'https://climoilou-estd.omnivox.ca/', className: 'omnivox-estd-active', log: '📊 Styles appliqués : ESTD' },
-            { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active', log: '✉️ Styles appliqués : MIO' }
+            { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active', log: '✉️ Styles appliqués : MIO' },
+            { prefix: 'https://climoilou.omnivox.ca/cvir/note', className: 'omnivox-note-active', log: '✉️ Styles appliqués : Notes' }
         ];
 
         // Trouver et appliquer la première classe correspondante
@@ -140,7 +141,8 @@
             { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx', className: 'omnivox-depot-active' },
             { prefix: 'https://climoilou.omnivox.ca/apps/mfa/login', className: 'omnivox-mfa-active' },
             { prefix: 'https://climoilou-estd.omnivox.ca/', className: 'omnivox-estd-active' },
-            { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active' }
+            { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active' },
+            { prefix: 'https://climoilou.omnivox.ca/cvir/note', className: 'omnivox-note-active' }
         ];
 
         const classesToRemove = [];
