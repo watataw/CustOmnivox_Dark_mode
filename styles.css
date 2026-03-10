@@ -648,6 +648,7 @@
     background-image: none;
 }
 
+
 .omnivox-mio-active #ctl00_bodyPage #container {
     top: 60px;
 }
@@ -696,7 +697,8 @@
     margin-left: 5px;
 }
 
-.omnivox-mio-active #tdLeftMenu {
+.omnivox-mio-active #tdLeftMenu,
+.omnivox-mio-active #mnuPrWr2{
     background-image: none;
 }
 
@@ -708,7 +710,8 @@
 
 .omnivox-mio-active #tdLogo img,
 .omnivox-mio-active #tdRepeatSky,
-.omnivox-mio-active #fakeGrip {
+.omnivox-mio-active #fakeGrip,
+.omnivox-mio-active #ClickOverlayBot + img {
     display: none;
 }
 
@@ -848,41 +851,41 @@ header #headerFixedBar .headerLeaRetour:hover {
 }
 
 .omnivox-mio-active .Office2007 {
-    background-image : none !important;
+    background-image: none !important;
 }
 
 .omnivox-mio-active body #aspnetForm,
-.omnivox-mio-active html{
-    background : none;
+.omnivox-mio-active html {
+    background: none;
 }
 
 .omnivox-mio-active #tableMsg {
-    color : white !important;
+    color: white !important;
 }
 
 .omnivox-mio-active .Office2007 .reToolbar .reTool,
-.omnivox-mio-active .Office2007 .reDropdown{
-    background-image : none !important;
-    background-color : var(--primary-background-color);
+.omnivox-mio-active .Office2007 .reDropdown {
+    background-image: none !important;
+    background-color: var(--primary-background-color);
 }
 
 .omnivox-mio-active .Office2007 .reDropdown:hover,
-.omnivox-mio-active .Office2007 .reToolbar .reTool:hover{
-    background-image : none !important;
-    background-color : var(--secondary-background-color);
+.omnivox-mio-active .Office2007 .reToolbar .reTool:hover {
+    background-image: none !important;
+    background-color: var(--secondary-background-color);
 }
 
 .omnivox-mio-active .Office2007 .reDropdown:link {
-    color : var(--primary-text-color) !important;
+    color: var(--primary-text-color) !important;
 }
 
 .omnivox-mio-active .Office2007.reWrapper {
-    border : solid 3px var(--important-text-color);
-    border-radius : 3px;
+    border: solid 3px var(--important-text-color);
+    border-radius: 3px;
 }
 
 .omnivox-mio-active .Gen_Btn {
-    background-color : var(--important-text-color) !important;
-    color : var(--primary-text-color);
-    border : none;
+    background-color: var(--important-text-color) !important;
+    color: var(--primary-text-color);
+    border: none;
 }
