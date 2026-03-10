@@ -255,6 +255,15 @@
     height: 100px !important;
 }
 
+.omnivox-lea-active .right-section .note-principale::after {
+    content: "\A";
+    white-space: pre;
+}
+
+.omnivox-lea-active .nouveaute {
+    background-color: var(--important-text-color) !important;
+}
+
 .omnivox-lea-active br {
     display: none;
 }
@@ -698,7 +707,7 @@
 }
 
 .omnivox-mio-active #tdLeftMenu,
-.omnivox-mio-active #mnuPrWr2{
+.omnivox-mio-active #mnuPrWr2 {
     background-image: none;
 }
 
