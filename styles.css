@@ -12,13 +12,14 @@
 .omnivox-intr-active {
     /* ============= Accueil ============= */
 }
+
 .omnivox-intr-active body,
 .omnivox-intr-active body a,
 .omnivox-intr-active .ovx10_lienService,
 .omnivox-intr-active #headerNavbarProfileUserName {
     color: var(--primary-text-color) !important;
     font-weight: normal !important;
-    font-family: Roboto;
+    font-family: Roboto, serif;
 }
 
 .omnivox-intr-active #headerFixedBar,
@@ -93,7 +94,7 @@
 
 .omnivox-intr-active .ovx10_offreServices {
     background-color: var(--secondary-background-color);
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0 0 0;
     padding: 10px;
     border-radius: 5px;
 }
@@ -141,6 +142,7 @@
 .omnivox-login-active {
     /* ======================== LOGIN PAGE ======================== */
 }
+
 .omnivox-login-active body {
     background-image: none !important;
     min-height: 100vh;
@@ -196,7 +198,7 @@
 }
 
 .omnivox-login-active .footer-identification-intraflex {
-    margin-bottom: 0px !important;
+    margin-bottom: 0 !important;
 }
 
 .omnivox-login-active .container-message-logout {
@@ -239,6 +241,7 @@
 .omnivox-lea-active {
     /* ============= Lea ============= */
 }
+
 .omnivox-lea-active body,
 .omnivox-lea-active #headerFixedBar {
     background-color: var(--primary-background-color) !important;
@@ -267,8 +270,8 @@
 
 .omnivox-lea-active .headerLeaRetour:hover,
 .omnivox-lea-active .headerNavbarLink:hover,
-.omnivox-lea-active #headerOmnivoxLogo,
-.omnivox-lea-active .card-panel-content {
+.omnivox-lea-active #headerOmnivoxLogo:hover,
+.omnivox-lea-active .card-panel-content:hover {
     background-color: var(--secondary-background-color) !important;
 }
 
@@ -395,7 +398,7 @@
     text-align: center;
     width: 80% !important;
     border-bottom: 3px solid var(--important-text-color);
-    padding-left: 0px;
+    padding-left: 0;
     align-content: center !important;
 }
 
@@ -475,11 +478,11 @@
 .omnivox-depot-active {
     /* ============ Dépot travail ============ */
 }
+
 .omnivox-depot-active .collection .collection-item {
     background-color: var(--secondary-background-color);
     border-radius: 10px;
     margin: 10px;
-    border-bottom: none;
     border: 15px solid var(--secondary-background-color);
 }
 
@@ -497,6 +500,7 @@
 .omnivox-mfa-active {
     /* ============= 2FA ============= */
 }
+
 .omnivox-mfa-active body {
     background-image: none !important;
     min-height: 100vh;
@@ -577,6 +581,7 @@
 .omnivox-estd-active {
     /* pas trop sur ca sert a quoi */
 }
+
 .omnivox-estd-active body {
     background-color: var(--primary-background-color) !important;
 }
@@ -632,6 +637,7 @@
 .omnivox-mio-active {
     /* ============ MIO ============ */
 }
+
 .omnivox-mio-active html body,
 .omnivox-mio-active #container {
     background-color: var(--primary-background-color) !important;
@@ -643,7 +649,7 @@
 }
 
 .omnivox-mio-active #container:has(#mnuPrWr) {
-    top: 0px;
+    top: 0;
 }
 
 .omnivox-mio-active #ctl00_cntFormulaire_upnListe {
@@ -682,7 +688,7 @@
 }
 
 .omnivox-mio-active .divRechercheMio {
-    padding: 0px;
+    padding: 0;
     margin-left: 5px;
 }
 
@@ -692,8 +698,8 @@
 
 .omnivox-mio-active #menuBarreOutils {
     border: none;
-    padding-right: 0px;
-    padding-left: 0px !important;
+    padding-right: 0;
+    padding-left: 0 !important;
 }
 
 .omnivox-mio-active #tdLogo img,
@@ -727,7 +733,7 @@
 
 .omnivox-mio-active .Msg .cBody {
     background-color: var(--secondary-background-color) !important;
-    padding: 0px;
+    padding: 0;
     color: var(--primary-text-color);
 }
 
@@ -735,11 +741,11 @@
     background-color: var(--secondary-background-color) !important;
     padding: 10px;
     border-radius: 3px !important;
-    margin: 0px !important;
+    margin: 0 !important;
 }
 
 .omnivox-mio-active #container {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 .omnivox-mio-active .usageGreen {
@@ -774,7 +780,7 @@
 }
 
 .omnivox-mio-active #ctl00_cntFormulaire_upnListe .Legende {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .omnivox-mio-active #ctl00_cntFormulaire_hlkThemes {
@@ -791,7 +797,7 @@
 .omnivox-mio-active .tblTrierFiltrer {
     background-color: var(--secondary-background-color) !important;
     color: var(--primary-text-color);
-    height: 0px;
+    height: 0;
 }
 
 .omnivox-mio-active .norm td,
@@ -818,4 +824,61 @@
 
 .omnivox-mio-active #tdRepeatSky {
     background-image: none;
+}
+
+.omnivox-mio-active #ctl00_bodyPage {
+    background-color: var(--primary-background-color) !important;
+}
+
+#headerOmnivoxLogo:hover,
+header #headerFixedBar .headerLeaRetour:hover {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.omnivox-mio-active a:is(.hlkBack, .hlkReplyAll, .hlkSend, .hlkDraft,
+                         .hlkAttach, .hlkCancel, .hlkCompose, .hlkReply,
+                         .hlkDelete, .hlkForward, .hlkEdit, .hlkCategoriser,
+                         .hlkFullView, .hlkSplitView, .hlkRestaurer, .hlkImpression):hover,
+.omnivox-mio-active .categorieWrapper:hover {
+    background-color: var(--primary-background-color) !important;
+}
+
+.omnivox-mio-active .Office2007 {
+    background-image : none !important;
+}
+
+.omnivox-mio-active body #aspnetForm,
+.omnivox-mio-active html{
+    background : none;
+}
+
+.omnivox-mio-active #tableMsg {
+    color : white !important;
+}
+
+.omnivox-mio-active .Office2007 .reToolbar .reTool,
+.omnivox-mio-active .Office2007 .reDropdown{
+    background-image : none !important;
+    background-color : var(--primary-background-color);
+}
+
+.omnivox-mio-active .Office2007 .reDropdown:hover,
+.omnivox-mio-active .Office2007 .reToolbar .reTool:hover{
+    background-image : none !important;
+    background-color : var(--secondary-background-color);
+}
+
+.omnivox-mio-active .Office2007 .reDropdown:link {
+    color : var(--primary-text-color) !important;
+}
+
+.omnivox-mio-active .Office2007.reWrapper {
+    border : solid 3px var(--important-text-color);
+    border-radius : 3px;
+}
+
+.omnivox-mio-active .Gen_Btn {
+    background-color : var(--important-text-color) !important;
+    color : var(--primary-text-color);
+    border : none;
 }
