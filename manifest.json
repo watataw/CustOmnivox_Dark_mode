@@ -3,6 +3,14 @@
   "name": "CustOmnivox - Dark mode",
   "version": "1.2",
   "description": "Theme sombre personnalisable pour Omnivox",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "customnivox@watataw.github.io",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
   "permissions": [
     "storage"
   ],
