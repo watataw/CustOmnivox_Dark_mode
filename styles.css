@@ -154,6 +154,25 @@
     width: 100%;
 }
 
+.omnivox-login-active .div-password input,
+.omnivox-login-active .div-identifiant input {
+    border-bottom: 2px solid var(--important-background-color) !important;
+    padding : 5px !important;
+}
+
+.omnivox-login-active .nom-service {
+    color : var(--important-text-color) !important;
+}
+
+.omnivox-login-active .btn {
+    background-color : var(--important-background-color) !important ;
+}
+
+.omnivox-login-active input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--primary-background-color) inset !important;
+    -webkit-text-fill-color: var(--primary-text-color) !important;
+}
+
 .omnivox-login-active .container-roles {
     border: 2px solid var(--important-background-color) !important;
 }
