@@ -511,6 +511,8 @@
     /* ============ Dépot travail ============ */
 }
 
+/*TODO Ne semble pas marcher....*/
+
 .omnivox-depot-active .collection .collection-item {
     background-color: var(--secondary-background-color);
     border-radius: 10px;
@@ -527,6 +529,51 @@
 .omnivox-depot-active .TitrePageLigne2 {
     color: var(--primary-text-color);
 }
+
+.omnivox-depot-active .blue.lighten-3{
+    background-color : var(--secondary-background-color) !important;
+    border : 5px solid var(--important-text-color) !important;
+    border-radius : 5px;
+    color : var(--primary-text-color) !important;
+}
+
+.omnivox-depot-active .TitrePageLigne1,
+.omnivox-depot-active TitrePageLigne2 {
+    color : var(--primary-text-color) !important;
+    font-weight: normal !important;
+}
+
+.omnivox-depot-active .collection-item {
+    background-color : var(--secondary-background-color) !important;
+    padding : 10px !important;
+    border : 2px solid var(--important-text-color) !important;
+    border-radius : 5px;
+}
+
+.omnivox-depot-active .material-icons  {
+    color : var(--important-background-color) !important;
+}
+
+.omnivox-depot-active .btn {
+    background-color : var(--important-text-color) !important;
+}
+
+.omnivox-depot-active .btn:hover {
+    background-color : var(--important-background-color) !important;
+}
+
+.omnivox-depot-active .blue-text.text-darken-2,
+.omnivox-depot-active .grey-text.text-darken-2{
+    color : var(--primary-text-color) !important;
+
+}
+
+.omnivox-depot-active #lblRemise span,
+.omnivox-depot-active #lblDocumentLie{
+    color : var(--important-text-color) !important;
+}
+
+
 
 /* Styles pour https://climoilou.omnivox.ca/apps/mfa/login */
 .omnivox-mfa-active {

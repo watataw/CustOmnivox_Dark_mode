@@ -159,7 +159,7 @@
             { prefix: 'https://climoilou.omnivox.ca/intr/', className: 'omnivox-intr-active' },
             { prefix: 'https://climoilou.omnivox.ca/Login/Account/', className: 'omnivox-login-active' },
             { prefix: 'https://climoilou-lea.omnivox.ca/', className: 'omnivox-lea-active' },
-            { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx', className: 'omnivox-depot-active' },
+            { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/', className: 'omnivox-depot-active' },
             { prefix: 'https://climoilou.omnivox.ca/apps/mfa/login', className: 'omnivox-mfa-active' },
             { prefix: 'https://climoilou-estd.omnivox.ca/', className: 'omnivox-estd-active' },
             { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active' },
