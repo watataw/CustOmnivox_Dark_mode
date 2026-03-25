@@ -8,7 +8,9 @@ Une extension Chrome qui applique un thème sombre personnalisé à toutes les p
 
 ## 📸 Aperçu
 
-*À venir*
+![Login](images/login.png)
+
+![Accueil](images/accueil.png)
 
 ## ✨ Fonctionnalités
 
@@ -24,8 +26,8 @@ Une extension Chrome qui applique un thème sombre personnalisé à toutes les p
 
 ## 🚀 Installation
 
-### Depuis le Chrome Web Store (à venir)
-*Bientôt disponible*
+### Depuis le Chrome Web Store
+[*Chrome web store : CustOmnivox - Dark Mode*](https://chromewebstore.google.com/detail/customnivox-dark-mode/abanagoahiaobiapekbdplphbaomaemj)
 
 ### Installation manuelle (mode développeur)
 
