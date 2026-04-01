@@ -1,218 +1,177 @@
-﻿// content.js
-(function() {
+﻿(function() {
     'use strict';
 
     let isEnabled = true;
     let themeColors = null;
 
-    // Charger l'état et les couleurs depuis storage
-    function loadThemeState() {
-        chrome.storage.sync.get(['themeEnabled', 'themeColors'], function(result) {
-            isEnabled = result.themeEnabled !== false;
-            themeColors = result.themeColors || null;
-            applyThemeState();
-            console.log(`%c🔧 Theme ${isEnabled ? 'activé' : 'désactivé'} (état chargé)`, 'background: #CE6B39; color: #191A1C; padding: 2px 4px; border-radius: 3px;');
-        });
-    }
 
-    // Appliquer les couleurs personnalisées via CSS variables
-    function applyCustomColors() {
-        if (themeColors) {
-            const root = document.documentElement;
-            Object.entries(themeColors).forEach(([key, value]) => {
-                root.style.setProperty(`--${key}`, value);
-            });
-            console.log('%c🎨 Couleurs personnalisées appliquées', 'background: #CE6B39; color: #191A1C; padding: 2px 4px; border-radius: 3px;');
+    const urlMappings = [
+        { test: url => url.includes('/intr/'), className: 'omnivox-intr-active', log: '🎨 Accueil' },
+        { test: url => url.includes('/Login/Account/'), className: 'omnivox-login-active', log: '🔑 Login' },
+        { test: url => url.includes('-lea.omnivox.ca'), className: 'omnivox-lea-active', log: '📚 Léa' },
+        { test: url => url.includes('/cvir/dtrv/DepotTravail.aspx'), className: 'omnivox-depot-active', log: '📤 Dépôt' },
+        { test: url => url.includes('/apps/mfa/login'), className: 'omnivox-mfa-active', log: '🔐 2FA' },
+        { test: url => url.includes('-estd.omnivox.ca'), className: 'omnivox-estd-active', log: '📊 ESTD' },
+        { test: url => url.includes('/WebApplication/Module.MIOE/'), className: 'omnivox-mio-active', log: '✉️ MIO' },
+        { test: url => url.includes('/cvir/note'), className: 'omnivox-note-active', log: '📝 Notes' }
+    ];
+
+    function isOmnivox(url) {
+        try {
+            const hostname = new URL(url).hostname;
+            return /\.omnivox\.ca$/.test(hostname);
+        } catch {
+            return false;
         }
     }
 
-    // Fonction pour appliquer l'état du theme
-    function applyThemeState() {
-        const htmlElement = document.documentElement;
 
-        if (isEnabled) {
-            htmlElement.classList.add('omnivox-theme-active');
-            applyCustomColors();
-            applyStylesBasedOnUrl();
-        } else {
-            htmlElement.classList.remove('omnivox-theme-active');
-            // Retirer toutes les classes de style spécifiques
-            const classesToRemove = [];
-            htmlElement.classList.forEach(className => {
-                if (className.startsWith('omnivox-') && className !== 'omnivox-theme-active') {
-                    classesToRemove.push(className);
-                }
-            });
-            classesToRemove.forEach(className => htmlElement.classList.remove(className));
-        }
+    function applyCustomColors(root) {
+        if (!themeColors) return;
+
+        Object.entries(themeColors).forEach(([key, value]) => {
+            root.style.setProperty(`--${key}`, value);
+        });
     }
 
-    // Fonction pour ajouter une classe à l'élément HTML en fonction de l'URL
-    function applyStylesBasedOnUrl() {
-        if (!isEnabled) return;
 
-        const url = window.location.href;
-        const htmlElement = document.documentElement;
+    function applyStyles(doc, url) {
+        if (!isEnabled || !isOmnivox(url)) return;
 
-        const classesToRemove = [];
-        htmlElement.classList.forEach(className => {
-            if (className.startsWith('omnivox-') && className !== 'omnivox-theme-active') {
-                classesToRemove.push(className);
-            }
-        });
-        classesToRemove.forEach(className => htmlElement.classList.remove(className));
+        const html = doc.documentElement;
 
-        const urlMappings = [
-            { prefix: 'https://climoilou.omnivox.ca/intr/', className: 'omnivox-intr-active', log: '🎨 Styles appliqués : Accueil (intr)' },
-            { prefix: 'https://climoilou.omnivox.ca/Login/Account/', className: 'omnivox-login-active', log: '🔑 Styles appliqués : Page de login' },
-            { prefix: 'https://climoilou-lea.omnivox.ca/', className: 'omnivox-lea-active', log: '📚 Styles appliqués : Léa' },
-            { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx', className: 'omnivox-depot-active', log: '📤 Styles appliqués : Dépôt de travail' },
-            { prefix: 'https://climoilou.omnivox.ca/apps/mfa/login', className: 'omnivox-mfa-active', log: '🔐 Styles appliqués : 2FA' },
-            { prefix: 'https://climoilou-estd.omnivox.ca/', className: 'omnivox-estd-active', log: '📊 Styles appliqués : ESTD' },
-            { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active', log: '✉️ Styles appliqués : MIO' },
-            { prefix: 'https://climoilou.omnivox.ca/cvir/note', className: 'omnivox-note-active', log: '✉️ Styles appliqués : Notes' }
-        ];
+        // reset classes
+        [...html.classList]
+            .filter(c => c.startsWith('omnivox-'))
+            .forEach(c => html.classList.remove(c));
+
+        html.classList.add('omnivox-theme-active');
+
+        applyCustomColors(html);
 
         let applied = false;
+
         for (const mapping of urlMappings) {
-            if (url.startsWith(mapping.prefix)) {
-                htmlElement.classList.add(mapping.className);
-                console.log(`%c${mapping.log}`, 'background: #CE6B39; color: #191A1C; font-weight: bold; padding: 2px 4px; border-radius: 3px;');
+            if (mapping.test(url)) {
+                html.classList.add(mapping.className);
+                console.log(`%c${mapping.log}`, 'background:#CE6B39;color:#191A1C;padding:2px 4px;border-radius:3px;');
                 applied = true;
                 break;
             }
         }
 
         if (!applied) {
-            console.log('%cℹ️ Aucun style spécifique appliqué pour cette URL', 'color: #a9b4c4;');
+            console.log('%cℹ️ Aucun style spécifique', 'color:#a9b4c4;');
         }
     }
 
-    // Écouter les messages du popup
-    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-        if (request.action === 'toggleTheme') {
-            isEnabled = request.enabled;
-            applyThemeState();
-            console.log(`%c🔧 Theme ${isEnabled ? 'activé' : 'désactivé'} (changement manuel)`, 'background: #CE6B39; color: #191A1C; padding: 2px 4px; border-radius: 3px;');
-            sendResponse({success: true});
-        } else if (request.action === 'updateColors') {
-            themeColors = request.colors;
-            if (isEnabled) {
-                applyCustomColors();
-            }
-            sendResponse({success: true});
+
+    function applyThemeState() {
+        const html = document.documentElement;
+
+        [...html.classList]
+            .filter(c => c.startsWith('omnivox-'))
+            .forEach(c => html.classList.remove(c));
+
+        if (isEnabled) {
+            applyStyles(document, window.location.href);
         }
-    });
+    }
 
-    // Appliquer au chargement initial
-    loadThemeState();
+    function loadThemeState() {
+        chrome.storage.sync.get(['themeEnabled', 'themeColors'], (res) => {
+            isEnabled = res.themeEnabled !== false;
+            themeColors = res.themeColors || null;
 
-    // Observer les changements d'URL
+            applyThemeState();
+        });
+    }
+
     let lastUrl = location.href;
+
     new MutationObserver(() => {
         const url = location.href;
         if (url !== lastUrl) {
             lastUrl = url;
-            if (isEnabled) {
-                applyStylesBasedOnUrl();
-            }
+            applyThemeState();
         }
     }).observe(document, { subtree: true, childList: true });
 
-    // Gestion des iframes (similaire à avant, mais avec les couleurs)
+
+    function handleIframe(iframe) {
+        try {
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+            const apply = () => {
+                applyStyles(doc, doc.location.href);
+            };
+
+            if (doc.readyState === 'complete') {
+                apply();
+            } else {
+                doc.addEventListener('DOMContentLoaded', apply);
+            }
+        } catch {
+            // CORS ignore
+        }
+    }
+
     function initIframes() {
-        if (!isEnabled) return;
-
-        const iframes = document.getElementsByTagName('iframe');
-        for (let iframe of iframes) {
+        document.querySelectorAll('iframe').forEach(handleIframe);
+    }
+    function updateAllIframes() {
+        document.querySelectorAll('iframe').forEach(iframe => {
             try {
-                if (iframe.contentDocument || iframe.contentWindow) {
-                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                    if (iframeDoc.readyState === 'complete') {
-                        applyStylesToIframe(iframeDoc);
-                    } else {
-                        iframeDoc.addEventListener('DOMContentLoaded', () => applyStylesToIframe(iframeDoc));
-                    }
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+                if (!isEnabled) {
+                    [...doc.documentElement.classList]
+                        .filter(c => c.startsWith('omnivox-'))
+                        .forEach(c => doc.documentElement.classList.remove(c));
+                } else {
+                    applyStyles(doc, doc.location.href);
                 }
-            } catch (e) {
-                // Erreur CORS, on ignore
-            }
-        }
-    }
-
-    function applyStylesToIframe(iframeDoc) {
-        if (!isEnabled) return;
-
-        const url = iframeDoc.location.href;
-        const htmlElement = iframeDoc.documentElement;
-
-        htmlElement.classList.add('omnivox-theme-active');
-
-        // Appliquer les couleurs à l'iframe
-        if (themeColors) {
-            Object.entries(themeColors).forEach(([key, value]) => {
-                htmlElement.style.setProperty(`--${key}`, value);
-            });
-        }
-
-        const urlMappings = [
-            { prefix: 'https://climoilou.omnivox.ca/intr/', className: 'omnivox-intr-active' },
-            { prefix: 'https://climoilou.omnivox.ca/Login/Account/', className: 'omnivox-login-active' },
-            { prefix: 'https://climoilou-lea.omnivox.ca/', className: 'omnivox-lea-active' },
-            { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx', className: 'omnivox-depot-active' },
-            { prefix: 'https://climoilou.omnivox.ca/apps/mfa/login', className: 'omnivox-mfa-active' },
-            { prefix: 'https://climoilou-estd.omnivox.ca/', className: 'omnivox-estd-active' },
-            { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active' },
-            { prefix: 'https://climoilou.omnivox.ca/cvir/note', className: 'omnivox-note-active' }
-        ];
-
-        const classesToRemove = [];
-        htmlElement.classList.forEach(className => {
-            if (className.startsWith('omnivox-') && className !== 'omnivox-theme-active') {
-                classesToRemove.push(className);
-            }
+            } catch {}
         });
-        classesToRemove.forEach(className => htmlElement.classList.remove(className));
-
-        for (const mapping of urlMappings) {
-            if (url.startsWith(mapping.prefix)) {
-                htmlElement.classList.add(mapping.className);
-                break;
-            }
-        }
     }
 
-    // Observer l'ajout de nouvelles iframes
-    const iframeObserver = new MutationObserver((mutations) => {
+
+    new MutationObserver((mutations) => {
         if (!isEnabled) return;
 
-        for (const mutation of mutations) {
-            for (const node of mutation.addedNodes) {
+        mutations.forEach(m => {
+            m.addedNodes.forEach(node => {
                 if (node.tagName === 'IFRAME') {
-                    try {
-                        if (node.contentDocument || node.contentWindow) {
-                            const iframeDoc = node.contentDocument || node.contentWindow.document;
-                            if (iframeDoc.readyState === 'complete') {
-                                applyStylesToIframe(iframeDoc);
-                            } else {
-                                iframeDoc.addEventListener('DOMContentLoaded', () => applyStylesToIframe(iframeDoc));
-                            }
-                        }
-                    } catch (e) {
-                        // Erreur CORS, on ignore
-                    }
+                    handleIframe(node);
                 }
-            }
-        }
+            });
+        });
+    }).observe(document.body || document.documentElement, {
+        childList: true,
+        subtree: true
     });
 
-    if (document.body) {
-        iframeObserver.observe(document.body, { childList: true, subtree: true });
-    } else {
-        document.addEventListener('DOMContentLoaded', () => {
-            iframeObserver.observe(document.body, { childList: true, subtree: true });
-        });
-    }
+
+    chrome.runtime.onMessage.addListener((req, _, sendResponse) => {
+        if (req.action === 'toggleTheme') {
+            isEnabled = req.enabled;
+            applyThemeState();
+            updateAllIframes(); // 🔥 IMPORTANT
+        }
+
+        if (req.action === 'updateColors') {
+            themeColors = req.colors;
+            applyThemeState();
+            updateAllIframes(); // 🔥 IMPORTANT
+        }
+
+        sendResponse({ success: true });
+    });
+
+
+
+
+    loadThemeState();
 
     if (document.readyState === 'complete') {
         initIframes();

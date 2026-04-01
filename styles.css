@@ -157,15 +157,15 @@
 .omnivox-login-active .div-password input,
 .omnivox-login-active .div-identifiant input {
     border-bottom: 2px solid var(--important-background-color) !important;
-    padding : 5px !important;
+    padding: 5px !important;
 }
 
 .omnivox-login-active .nom-service {
-    color : var(--important-text-color) !important;
+    color: var(--important-text-color) !important;
 }
 
 .omnivox-login-active .btn {
-    background-color : var(--important-background-color) !important ;
+    background-color: var(--important-background-color) !important;
 }
 
 .omnivox-login-active input:-webkit-autofill {
@@ -262,7 +262,9 @@
 }
 
 .omnivox-lea-active body,
-.omnivox-lea-active #headerFixedBar {
+.omnivox-lea-active #headerFixedBar,
+.omnivox-lea-active .section-centre,
+.omnivox-lea-active .cvirContenuCVIR {
     background-color: var(--primary-background-color) !important;
 }
 
@@ -702,6 +704,7 @@
     color: var(--primary-text-color) !important;
 }
 
+
 .omnivox-mio-active .newmsg {
     background-color: var(--important-text-color) !important;
 }
@@ -739,7 +742,7 @@
 .omnivox-mio-active #tdLogo img,
 .omnivox-mio-active #tdRepeatSky,
 .omnivox-mio-active #fakeGrip,
-.omnivox-mio-active #ClickOverlayBot + img {
+.omnivox-mio-active #ClickOverlayBot + img{
     display: none;
 }
 
