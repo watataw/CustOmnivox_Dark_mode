@@ -8,6 +8,10 @@
     --text-muted: #6f7d91;
 }
 
+html {
+    background-color: var(--primary-background-color) !important;
+}
+
 /* Styles pour https://climoilou.omnivox.ca/intr/ */
 .omnivox-intr-active {
     /* ============= Accueil ============= */
@@ -447,7 +451,8 @@
 .omnivox-lea-active #tblExplicationsEtudiant,
 .omnivox-lea-active #titrelblConseilSauvegarde,
 .omnivox-lea-active #titrelblConseilZipEstd,
-.omnivox-lea-active .parent-menu-gauche img {
+.omnivox-lea-active .parent-menu-gauche img,
+.omnivox-lea-active .imgLogoCollege{
     display: none;
 }
 
@@ -506,7 +511,14 @@
 
 /* Styles pour Notes dans Léa */
 
-/*TODO mettre le texte en noir */
+.omnivox-lea-active .note-wrapper,
+.omnivox-lea-active .note-wrapper td,
+.omnivox-lea-active .note-wrapper tr,
+.omnivox-lea-active .note-wrapper table{
+    background-color: var(--primary-background-color) !important;
+
+}
+
 
 /* Styles pour https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx */
 .omnivox-depot-active {
