@@ -8,6 +8,10 @@
     --text-muted: #6f7d91;
 }
 
+html {
+    background-color: var(--primary-background-color) !important;
+}
+
 /* Styles pour https://climoilou.omnivox.ca/intr/ */
 .omnivox-intr-active {
     /* ============= Accueil ============= */
@@ -157,15 +161,15 @@
 .omnivox-login-active .div-password input,
 .omnivox-login-active .div-identifiant input {
     border-bottom: 2px solid var(--important-background-color) !important;
-    padding : 5px !important;
+    padding: 5px !important;
 }
 
 .omnivox-login-active .nom-service {
-    color : var(--important-text-color) !important;
+    color: var(--important-text-color) !important;
 }
 
 .omnivox-login-active .btn {
-    background-color : var(--important-background-color) !important ;
+    background-color: var(--important-background-color) !important;
 }
 
 .omnivox-login-active input:-webkit-autofill {
@@ -262,7 +266,9 @@
 }
 
 .omnivox-lea-active body,
-.omnivox-lea-active #headerFixedBar {
+.omnivox-lea-active #headerFixedBar,
+.omnivox-lea-active .section-centre,
+.omnivox-lea-active .cvirContenuCVIR {
     background-color: var(--primary-background-color) !important;
 }
 
@@ -445,7 +451,8 @@
 .omnivox-lea-active #tblExplicationsEtudiant,
 .omnivox-lea-active #titrelblConseilSauvegarde,
 .omnivox-lea-active #titrelblConseilZipEstd,
-.omnivox-lea-active .parent-menu-gauche img {
+.omnivox-lea-active .parent-menu-gauche img,
+.omnivox-lea-active .imgLogoCollege{
     display: none;
 }
 
@@ -504,7 +511,14 @@
 
 /* Styles pour Notes dans Léa */
 
-/*TODO mettre le texte en noir */
+.omnivox-lea-active .note-wrapper,
+.omnivox-lea-active .note-wrapper td,
+.omnivox-lea-active .note-wrapper tr,
+.omnivox-lea-active .note-wrapper table{
+    background-color: var(--primary-background-color) !important;
+
+}
+
 
 /* Styles pour https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx */
 .omnivox-depot-active {
@@ -749,6 +763,7 @@
     color: var(--primary-text-color) !important;
 }
 
+
 .omnivox-mio-active .newmsg {
     background-color: var(--important-text-color) !important;
 }
@@ -786,7 +801,7 @@
 .omnivox-mio-active #tdLogo img,
 .omnivox-mio-active #tdRepeatSky,
 .omnivox-mio-active #fakeGrip,
-.omnivox-mio-active #ClickOverlayBot + img {
+.omnivox-mio-active #ClickOverlayBot + img{
     display: none;
 }
 
