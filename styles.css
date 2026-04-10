@@ -525,13 +525,15 @@ html {
     /* ============ Dépot travail ============ */
 }
 
-/*TODO Ne semble pas marcher....*/
-
 .omnivox-depot-active .collection .collection-item {
     background-color: var(--secondary-background-color);
     border-radius: 10px;
     margin: 10px;
     border: 15px solid var(--secondary-background-color);
+}
+
+.omnivox-depot-active #pageCVIR {
+    background-color: var(--primary-background-color) !important;
 }
 
 .omnivox-depot-active .blue.lighten-3 {
@@ -540,7 +542,12 @@ html {
 }
 
 .omnivox-depot-active .TitrePageLigne1,
-.omnivox-depot-active .TitrePageLigne2 {
+.omnivox-depot-active .TitrePageLigne2,
+.omnivox-depot-active #lblTitreInfoTravail,
+.omnivox-depot-active #lblEnteteDocumentLie,
+.omnivox-depot-active #lblTitreRemise,
+.omnivox-depot-active #lblEnteteDateRemise,
+.omnivox-depot-active #lblEnteteRemise{
     color: var(--primary-text-color);
 }
 
@@ -552,7 +559,7 @@ html {
 }
 
 .omnivox-depot-active .TitrePageLigne1,
-.omnivox-depot-active TitrePageLigne2 {
+.omnivox-depot-active .TitrePageLigne2 {
     color : var(--primary-text-color) !important;
     font-weight: normal !important;
 }

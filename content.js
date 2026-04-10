@@ -65,8 +65,8 @@
         const urlMappings = [
             { prefix: 'https://climoilou.omnivox.ca/intr/', className: 'omnivox-intr-active', log: '🎨 Styles appliqués : Accueil (intr)' },
             { prefix: 'https://climoilou.omnivox.ca/Login/Account/', className: 'omnivox-login-active', log: '🔑 Styles appliqués : Page de login' },
+            { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/', className: 'omnivox-depot-active', log: '📤 Styles appliqués : Dépôt de travail' },
             { prefix: 'https://climoilou-lea.omnivox.ca/', className: 'omnivox-lea-active', log: '📚 Styles appliqués : Léa' },
-            { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/DepotTravail.aspx', className: 'omnivox-depot-active', log: '📤 Styles appliqués : Dépôt de travail' },
             { prefix: 'https://climoilou.omnivox.ca/apps/mfa/login', className: 'omnivox-mfa-active', log: '🔐 Styles appliqués : 2FA' },
             { prefix: 'https://climoilou-estd.omnivox.ca/', className: 'omnivox-estd-active', log: '📊 Styles appliqués : ESTD' },
             { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active', log: '✉️ Styles appliqués : MIO' },
@@ -158,8 +158,8 @@
         const urlMappings = [
             { prefix: 'https://climoilou.omnivox.ca/intr/', className: 'omnivox-intr-active' },
             { prefix: 'https://climoilou.omnivox.ca/Login/Account/', className: 'omnivox-login-active' },
-            { prefix: 'https://climoilou-lea.omnivox.ca/', className: 'omnivox-lea-active' },
             { prefix: 'https://climoilou-lea.omnivox.ca/cvir/dtrv/', className: 'omnivox-depot-active' },
+            { prefix: 'https://climoilou-lea.omnivox.ca/', className: 'omnivox-lea-active' },
             { prefix: 'https://climoilou.omnivox.ca/apps/mfa/login', className: 'omnivox-mfa-active' },
             { prefix: 'https://climoilou-estd.omnivox.ca/', className: 'omnivox-estd-active' },
             { prefix: 'https://climoilou.omnivox.ca/WebApplication/Module.MIOE/', className: 'omnivox-mio-active' },
