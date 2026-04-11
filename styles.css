@@ -745,6 +745,17 @@ html {
 }
 
 
+.omnivox-mio-active #ctl00_cntFormulaire_ftbMioNouveauTop,
+.omnivox-mio-active .reRightVerticalSide,
+.omnivox-mio-active .grip_last,
+.omnivox-mio-active .Office2007.reWrapper{
+    background-color : var(--secondary-background-color) !important;
+}
+.Office2007 .reToolbar li, .Office2007 .reSpinBox a, .Office2007.reToolbar .reSeparator, .Office2007.reToolbar .reGrip, .Office2007 .reDialog .reTool, .Office2007 .reModule .reTool, .Office2007 .reDialog .reTool:hover, .Office2007 .reToolbar .reTool:hover, .Office2007 .reModule .reTool:hover, .Office2007 .reToolbar .reTool.reTool_selected, .Office2007 .reToolbar .reTool.reTool_selected:hover, .Office2007 .reToolbar .reTool_text:hover, .Office2007 .reToolbar .reTool_text.reTool_selected, .Office2007 .reToolbar .reTool_text.reTool_selected:hover, .Office2007 .reTool .split_arrow, .Office2007 .reSplitButton.reTool_text .split_arrow, .Office2007 .reToolbar .reTool_text .split_arrow, .Office2007 .reDialog .reTool.reSplitButton, .Office2007 .reModule .reTool.reSplitButton, .Office2007 .reDropdown, .Office2007 .reTool_disabled.reDropdown:hover, .Office2007 .reResizeCell div, .Office2007.reInsertTable .reToolbar li .reTool:hover, .Office2007.RadEditor.reRtl .reDropdown:hover {
+    background-image : none !important;
+}
+
+
 .omnivox-mio-active #ctl00_bodyPage #container {
     top: 60px;
 }
