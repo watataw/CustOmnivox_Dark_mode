@@ -452,7 +452,7 @@ html {
 .omnivox-lea-active #titrelblConseilSauvegarde,
 .omnivox-lea-active #titrelblConseilZipEstd,
 .omnivox-lea-active .parent-menu-gauche img,
-.omnivox-lea-active .imgLogoCollege{
+.omnivox-lea-active .imgLogoCollege {
     display: none;
 }
 
@@ -514,7 +514,7 @@ html {
 .omnivox-lea-active .note-wrapper,
 .omnivox-lea-active .note-wrapper td,
 .omnivox-lea-active .note-wrapper tr,
-.omnivox-lea-active .note-wrapper table{
+.omnivox-lea-active .note-wrapper table {
     background-color: var(--primary-background-color) !important;
 
 }
@@ -547,53 +547,52 @@ html {
 .omnivox-depot-active #lblEnteteDocumentLie,
 .omnivox-depot-active #lblTitreRemise,
 .omnivox-depot-active #lblEnteteDateRemise,
-.omnivox-depot-active #lblEnteteRemise{
+.omnivox-depot-active #lblEnteteRemise {
     color: var(--primary-text-color);
 }
 
-.omnivox-depot-active .blue.lighten-3{
-    background-color : var(--secondary-background-color) !important;
-    border : 5px solid var(--important-text-color) !important;
-    border-radius : 5px;
-    color : var(--primary-text-color) !important;
+.omnivox-depot-active .blue.lighten-3 {
+    background-color: var(--secondary-background-color) !important;
+    border: 5px solid var(--important-text-color) !important;
+    border-radius: 5px;
+    color: var(--primary-text-color) !important;
 }
 
 .omnivox-depot-active .TitrePageLigne1,
 .omnivox-depot-active .TitrePageLigne2 {
-    color : var(--primary-text-color) !important;
+    color: var(--primary-text-color) !important;
     font-weight: normal !important;
 }
 
 .omnivox-depot-active .collection-item {
-    background-color : var(--secondary-background-color) !important;
-    padding : 10px !important;
-    border : 2px solid var(--important-text-color) !important;
-    border-radius : 5px;
+    background-color: var(--secondary-background-color) !important;
+    padding: 10px !important;
+    border: 2px solid var(--important-text-color) !important;
+    border-radius: 5px;
 }
 
-.omnivox-depot-active .material-icons  {
-    color : var(--important-background-color) !important;
+.omnivox-depot-active .material-icons {
+    color: var(--important-background-color) !important;
 }
 
 .omnivox-depot-active .btn {
-    background-color : var(--important-text-color) !important;
+    background-color: var(--important-text-color) !important;
 }
 
 .omnivox-depot-active .btn:hover {
-    background-color : var(--important-background-color) !important;
+    background-color: var(--important-background-color) !important;
 }
 
 .omnivox-depot-active .blue-text.text-darken-2,
-.omnivox-depot-active .grey-text.text-darken-2{
-    color : var(--primary-text-color) !important;
+.omnivox-depot-active .grey-text.text-darken-2 {
+    color: var(--primary-text-color) !important;
 
 }
 
 .omnivox-depot-active #lblRemise span,
-.omnivox-depot-active #lblDocumentLie{
-    color : var(--important-text-color) !important;
+.omnivox-depot-active #lblDocumentLie {
+    color: var(--important-text-color) !important;
 }
-
 
 
 /* Styles pour https://climoilou.omnivox.ca/apps/mfa/login */
@@ -748,11 +747,12 @@ html {
 .omnivox-mio-active #ctl00_cntFormulaire_ftbMioNouveauTop,
 .omnivox-mio-active .reRightVerticalSide,
 .omnivox-mio-active .grip_last,
-.omnivox-mio-active .Office2007.reWrapper{
-    background-color : var(--secondary-background-color) !important;
+.omnivox-mio-active .Office2007.reWrapper {
+    background-color: var(--secondary-background-color) !important;
 }
+
 .Office2007 .reToolbar li, .Office2007 .reSpinBox a, .Office2007.reToolbar .reSeparator, .Office2007.reToolbar .reGrip, .Office2007 .reDialog .reTool, .Office2007 .reModule .reTool, .Office2007 .reDialog .reTool:hover, .Office2007 .reToolbar .reTool:hover, .Office2007 .reModule .reTool:hover, .Office2007 .reToolbar .reTool.reTool_selected, .Office2007 .reToolbar .reTool.reTool_selected:hover, .Office2007 .reToolbar .reTool_text:hover, .Office2007 .reToolbar .reTool_text.reTool_selected, .Office2007 .reToolbar .reTool_text.reTool_selected:hover, .Office2007 .reTool .split_arrow, .Office2007 .reSplitButton.reTool_text .split_arrow, .Office2007 .reToolbar .reTool_text .split_arrow, .Office2007 .reDialog .reTool.reSplitButton, .Office2007 .reModule .reTool.reSplitButton, .Office2007 .reDropdown, .Office2007 .reTool_disabled.reDropdown:hover, .Office2007 .reResizeCell div, .Office2007.reInsertTable .reToolbar li .reTool:hover, .Office2007.RadEditor.reRtl .reDropdown:hover {
-    background-image : none !important;
+    background-image: none !important;
 }
 
 
@@ -795,31 +795,32 @@ html {
     background-image: none;
 }
 
-.omnivox-mio-active #menuBarreOutilsOptionsWrapper {
+#menuBarreOutilsOptionsWrapper {
     background-color: var(--secondary-background-color);
     border-radius: 3px;
 }
 
-.omnivox-mio-active .divRechercheMio {
+.divRechercheMio {
     padding: 0;
     margin-left: 5px;
 }
 
-.omnivox-mio-active #tdLeftMenu,
-.omnivox-mio-active #mnuPrWr2 {
-    background-image: none;
+#tdLeftMenu,
+#mnuPrWr2,
+#mnuPrWr{
+    background-image: none !important;
 }
 
-.omnivox-mio-active #menuBarreOutils {
+#menuBarreOutils {
     border: none;
     padding-right: 0;
     padding-left: 0 !important;
 }
 
-.omnivox-mio-active #tdLogo img,
-.omnivox-mio-active #tdRepeatSky,
-.omnivox-mio-active #fakeGrip,
-.omnivox-mio-active #ClickOverlayBot + img{
+#tdLogo img,
+#tdRepeatSky,
+#fakeGrip,
+#ClickOverlayBot + img {
     display: none;
 }
 
@@ -832,7 +833,7 @@ html {
     display: none;
 }
 
-.omnivox-mio-active #footer .MenuPrincipalBoxSpace {
+#footer .MenuPrincipalBoxSpace {
     background-image: none;
     background-color: var(--secondary-background-color);
     border: none;
@@ -872,10 +873,9 @@ html {
     background-color: var(--primary-background-color);
 }
 
-.omnivox-mio-active #mnuPrWr {
-    background: none;
-    border: none;
-    background-color: var(--secondary-background-color);
+#mnuPrWr {
+    border: none !important;
+    background: var(--secondary-background-color) none !important;
     border-radius: 3px;
     padding-bottom: 5px;
     margin-left: 5px;
@@ -885,7 +885,7 @@ html {
     background-image: none;
 }
 
-.omnivox-mio-active #frGauche {
+#frGauche {
     display: none !important;
 }
 
@@ -904,15 +904,15 @@ html {
     padding-right: 20px;
 }
 
-.omnivox-mio-active #tdRepeatMenu,
-.omnivox-mio-active .tblTrierFiltrer {
-    background-image: none;
+#tdRepeatMenu,
+.tblTrierFiltrer {
+    background-image: none !important;
 }
 
-.omnivox-mio-active .tblTrierFiltrer {
+.tblTrierFiltrer  {
     background-color: var(--secondary-background-color) !important;
     color: var(--primary-text-color);
-    height: 0;
+    height: 0 !important;
 }
 
 .omnivox-mio-active .norm td,
@@ -936,10 +936,10 @@ html {
     border: none;
     background-color: var(--primary-text-color);
 }
-
-.omnivox-mio-active #tdRepeatSky {
-    background-image: none;
+#tdRepeatSky {
+    background-image: none !important;
 }
+
 
 .omnivox-mio-active #ctl00_bodyPage {
     background-color: var(--primary-background-color) !important;
