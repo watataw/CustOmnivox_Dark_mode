@@ -482,13 +482,13 @@ html {
     border-radius : 5px;
 }
 
-//TODO centrer le table
+/* TODO centrer le table */
 
 .omnivox-lea-active #tblDocuments {
     width : 100%;
     margin-left : 5%;
     margin-right : 5% !important;
-    padding : 20px !important;
+    border: 5px solid var(--important-text-color);
     border-radius : 5px !important;
 }
 
