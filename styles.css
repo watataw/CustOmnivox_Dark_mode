@@ -17,6 +17,8 @@ html {
     /* ============= Accueil ============= */
 }
 
+
+
 .omnivox-intr-active body,
 .omnivox-intr-active body a,
 .omnivox-intr-active .ovx10_lienService,
@@ -474,9 +476,33 @@ html {
 .omnivox-lea-active #tblDocuments tbody,
 .omnivox-lea-active #tblDocuments tr,
 .omnivox-lea-active #tblDocuments td {
-    background-color: var(--primary-background-color) !important;
+    background-color: var(--secondary-background-color) !important;
     color: var(--primary-text-color) !important;
     border-collapse: collapse !important;
+    border-radius : 5px;
+}
+
+//TODO centrer le table
+
+.omnivox-lea-active #tblDocuments {
+    width : 100%;
+    margin-left : 5%;
+    margin-right : 5% !important;
+    padding : 20px !important;
+    border-radius : 5px !important;
+}
+
+.omnivox-lea-active .CategorieDocumentEtudiant {
+    width : 80%;
+}
+
+.omnivox-lea-active table[width="640"]:nth-of-type(2),
+.omnivox-lea-active table[width="640"]:not(#tblExplicationsEtudiant) {
+    display: none !important;
+}
+
+.omnivox-lea-active #tblDocuments *{
+    font-size : 1em;
 }
 
 .omnivox-lea-active #tblDocuments th,
