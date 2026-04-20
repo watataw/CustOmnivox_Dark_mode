@@ -19,6 +19,52 @@ html {
 
 
 
+.omnivox-intr-active table:has(#ctl00_cntFormulaire_NouveauMotDePasse_hidCaractereSpeciaux) .footer {
+    border-radius : 5px;
+    border-top : none;
+    left : 50px !important;
+}
+
+.omnivox-intr-active table:has(#ctl00_cntFormulaire_NouveauMotDePasse_hidCaractereSpeciaux) .footer input{
+    background-color : var(--important-text-color);
+    margin-right : 15px;
+}
+
+.omnivox-intr-active table:has(#ctl00_cntFormulaire_NouveauMotDePasse_hidCaractereSpeciaux) .module-header-title {
+    color : var(--important-background-color);
+}
+
+.omnivox-intr-active #ctl00_cntFormulaire_NouveauMotDePasse_txtMotPasse,
+.omnivox-intr-active #ctl00_cntFormulaire_NouveauMotDePasse_txtConfirmation{
+    background-color : var(--secondary-background-color);
+    border-bottom : 2px solid var(--important-text-color);
+    color : var(--primary-text-color);
+}
+
+.omnivox-intr-active #ctl00_cntFormulaire_NouveauMotDePasse_txtMotPasse:active,
+.omnivox-intr-active #ctl00_cntFormulaire_NouveauMotDePasse_txtConfirmation:active{
+    background-color : var(--primary-background-color);
+    border-bottom : 2px solid var(--important-text-color);
+}
+
+.omnivox-intr-active #placeholder-text-erreur div {
+    background-color : var(--primary-background-color);
+    color : var(--important-text-color);
+}
+
+.omnivox-intr-active .Gen_Alert_Icon {
+    display : none !important;
+}
+.omnivox-intr-active #reacting-loader {
+    background-color : var(--important-text-color) !important;
+}
+
+.omnivox-intr-active table:has(#ctl00_cntFormulaire_NouveauMotDePasse_hidCaractereSpeciaux) .pages-intermediaires {
+    background-color : var(--secondary-background-color);
+    padding : 20px;
+    border-radius : 10px;
+}
+
 .omnivox-intr-active body,
 .omnivox-intr-active body a,
 .omnivox-intr-active .ovx10_lienService,
