@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const applyColorsBtn = document.getElementById('applyColorsBtn');
     const successMessage = document.getElementById('successMessage');
     const colorGrid = document.getElementById('colorGrid');
+    const imageGrid = document.getElementById('imageGrid');
 
     // Couleurs par défaut
     const defaultColors = {
@@ -18,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
         'secondary-text-color': '#a9b4c4',
         'important-text-color': '#CE6B39',
         'text-muted': '#6f7d91'
+    };
+
+    const defaultImages = {
+        'cegep-limoilou-grey': "https://i.imgur.com/NsuetyD.png"
     };
 
     // Noms conviviaux pour l'affichage
@@ -33,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Stockage des couleurs actuelles
     let currentColors = {};
+    let currentImages = {};
 
     // Charger l'état du thème et les couleurs
-    chrome.storage.sync.get(['themeEnabled', 'themeColors'], function(result) {
+    chrome.storage.sync.get(['themeEnabled', 'themeColors', 'themeImages'], function(result) {
         // État du thème
         const isEnabled = result.themeEnabled !== false;
         toggleSwitch.checked = isEnabled;
@@ -44,12 +50,103 @@ document.addEventListener('DOMContentLoaded', function() {
         // Couleurs personnalisées ou par défaut
         currentColors = result.themeColors || {...defaultColors};
         generateColorInputs(currentColors);
+        currentImages = result.images || {...defaultImages};
+        generateImageInput(currentImages);
     });
 
     // Mettre à jour le texte de statut
     function updateStatusText(enabled) {
         statusText.textContent = enabled ? 'Activé' : 'Désactivé';
         statusText.style.color = enabled ? '#CE6B39' : '#a9b4c4';
+    }
+
+    // Générer les champs d'images
+    function generateImageInput(images) {
+        imageGrid.innerHTML = '';
+
+        Object.keys(defaultImages).forEach(key => {
+            const imageItem = document.createElement('div');
+            imageItem.className = 'color-item';
+
+            const label = document.createElement('span');
+            label.className = 'color-label';
+            label.textContent = colorNames[key] || key;
+
+            const input = document.createElement('input');
+            input.type = 'image';
+            input.className = 'color-input';
+            input.id = `image-${key}`;
+            input.value = images[key] || defaultImages[key];
+
+            const valueSpan = document.createElement('span');
+            valueSpan.className = 'color-value';
+            valueSpan.textContent = input.value;
+
+            // Bouton reset individuel
+            const resetBtn = document.createElement('button');
+            resetBtn.className = 'btn-reset-small';
+            resetBtn.title = 'Reset à la couleur par défaut';
+            resetBtn.innerHTML = '↺';
+            resetBtn.style.cssText = `
+                background: transparent;
+                border: 1px solid #483d66;
+                color: #CE6B39;
+                border-radius: 4px;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s;
+            `;
+
+            // Hover effect
+            resetBtn.addEventListener('mouseenter', () => {
+                resetBtn.style.backgroundColor = 'rgba(206, 107, 57, 0.1)';
+                resetBtn.style.borderColor = '#CE6B39';
+            });
+            resetBtn.addEventListener('mouseleave', () => {
+                resetBtn.style.backgroundColor = 'transparent';
+                resetBtn.style.borderColor = '#483d66';
+            });
+
+            // Action de reset individuel
+            resetBtn.addEventListener('click', function() {
+                const defaultValue = defaultImages[key];
+                input.value = defaultValue;
+                valueSpan.textContent = defaultValue;
+
+                // Mettre à jour currentColors
+                currentImages[key] = defaultValue;
+
+                // Sauvegarder dans le storage
+                chrome.storage.sync.set({ themeImages: currentImages });
+
+                // Appliquer immédiatement le changement en temps réel
+                applyColorsToTabs(currentColors);
+
+                // Afficher un petit message de confirmation
+                showResetConfirmation(resetBtn);
+            });
+
+            // Mettre à jour l'affichage hex quand la couleur change
+            input.addEventListener('input', function() {
+                valueSpan.textContent = this.value;
+                currentImages[key] = this.value;
+
+                // Appliquer immédiatement en temps réel pendant le glissement
+                applyImagesToTabs(currentImages);
+            });
+
+            imageItem.appendChild(label);
+            imageItem.appendChild(input);
+            imageItem.appendChild(valueSpan);
+            imageItem.appendChild(resetBtn);
+
+            imageGrid.appendChild(imageItem);
+        });
     }
 
     // Générer les champs de couleur avec bouton reset individuel
@@ -163,7 +260,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     action: 'updateColors',
                     colors: colors
                 }).catch(() => {
-                    // Ignorer les erreurs
+                });
+            });
+        });
+    }
+
+    function applyImagesToTabs(images) {
+        chrome.tabs.query({url: "https://*.omnivox.ca/*"}, function(tabs) {
+            tabs.forEach(function(tab) {
+                chrome.tabs.sendMessage(tab.id, {
+                    action: 'updateImages',
+                    images: images
+                }).catch(() => {
                 });
             });
         });
