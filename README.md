@@ -2,7 +2,7 @@
 
 Une extension Chrome qui applique un thème sombre personnalisé à toutes les plateformes Omnivox (Intr, Léa, MIO, ESTD, etc.).
 
-![Version](https://img.shields.io/badge/version-1.1-blue)
+![Version](https://img.shields.io/badge/version-1.4-blue)
 ![Licence](https://img.shields.io/badge/licence-MIT-green)
 ![Chrome](https://img.shields.io/badge/chrome-extension-orange)
 
