@@ -36,7 +36,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "customnivox-dark-mode@extension.local",
+      "id": "customnivox@watataw.github.io",
       "strict_min_version": "109.0"
     }
   }
